@@ -28,7 +28,7 @@ public class Main {
 
         do {
             printEncryptedCapital(encryptedWordsList);
-            System.out.println("Type in a letter to guess!");
+            System.out.println("Type a letter to guess!");
             printMissedLetters(lettersNotInWord);
             System.out.println("Your lives " + userLives);
             Scanner scan = new Scanner(System.in);
@@ -36,7 +36,7 @@ public class Main {
             clearScreen();
             if (capitalLetterToGuess.contains(userLetter) && !encryptedWordsList.contains(userLetter)) {
                 System.out.println("YOU GUESSED THE LETTER");
-                encryptedWordsList = replaceDashesWithLetters(encryptedWordsList, capitalLetterToGuess, userLetter);
+                replaceDashesWithLetters(encryptedWordsList, capitalLetterToGuess, userLetter);
             } else if (!capitalLetterToGuess.contains(userLetter) && !lettersNotInWord.contains(userLetter)) {
                 System.out.println("Missed!");
                 userLives -= 1;
@@ -74,7 +74,7 @@ public class Main {
     }
 
 
-    public static ArrayList<String> replaceDashesWithLetters(ArrayList<String> dashedWordList, String capitalToGuess, String userLetter) {
+    public static void replaceDashesWithLetters(ArrayList<String> dashedWordList, String capitalToGuess, String userLetter) {
         for (int i = 0; i < dashedWordList.size(); i++) {
             char capitalLetter = capitalToGuess.charAt(i);
             char userCharacter = userLetter.charAt(0);
@@ -82,7 +82,6 @@ public class Main {
                 dashedWordList.set(i, userLetter);
             }
         }
-        return dashedWordList;
     }
 
 
