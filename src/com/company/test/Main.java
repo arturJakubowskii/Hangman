@@ -140,7 +140,7 @@ public class Main {
 
     public static String readFromFileAndChooseRandom() throws FileNotFoundException {
         ArrayList<String> fullData = new ArrayList<String>();
-            File textObject = new File("/home/samurai/IdeaProjects/Hangman/countries_and_capitals");
+            File textObject = new File("countries_and_capitals");
             Scanner textReader = new Scanner(textObject);
             while (textReader.hasNextLine()) {
                 String data = textReader.nextLine();
